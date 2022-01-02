@@ -1,0 +1,67 @@
+.content-container{
+    max-width: 1120px;
+    margin:-2rem auto;
+    padding: 0 2rem;
+    height: calc(100vh - 10rem);
+
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+     > img{
+        width: 50rem;
+        height: auto;
+    }
+
+    @media screen and (max-width:768px){
+        > img {
+            display: none;
+        }
+
+        .hero {
+            margin:0 auto;
+   
+            h1{
+                font-size: 4rem;
+            }
+        }
+    }
+
+}
+
+.hero{
+    max-width: 600px;
+
+    > span{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    h1{
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+        font-weight: 900;
+        margin-top: 2rem;
+
+        span{
+            color: var(--purple-500);
+        }
+
+    }
+
+    p{
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        margin-top: 1rem;
+
+        span{
+            font-weight: bold;
+            color: var(--purple-500);
+        }
+    }
+
+    button{
+        margin-top: 2rem;
+    }
+
+}
