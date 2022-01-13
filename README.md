@@ -1,3 +1,3 @@
 
-## News Indexr App FrontEnd
+## News Indexer App FrontEnd
 
