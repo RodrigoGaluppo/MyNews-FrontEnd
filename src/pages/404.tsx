@@ -10,7 +10,7 @@ export default function Page404() {
     <>
 
       <Head>
-        <title>Not found | ignews</title>
+        <title>Not found | MyNews</title>
       </Head>
 
       <main className={styles.main} >

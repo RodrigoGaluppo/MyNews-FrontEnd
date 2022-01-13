@@ -46,7 +46,7 @@ export default  function News({article}:newsProps){
         return(
             <>
                 <Head>
-                    <title>Posts | Ignews</title>
+                    <title>Posts | MyNews</title>
                 </Head>
 
                 <h1 className={styles.errorMessage} >Could not load posts</h1>

@@ -1,6 +1,6 @@
 import styles from "./news.styles.module.scss"
 import Head from "next/head"
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import Link from "next/link"
 import SearchInput from "../../components/SearchInput"
 import { api } from "../../services/api"
@@ -96,7 +96,7 @@ export default  function News({news}:newsProps){
         return(
             <>
                 <Head>
-                    <title>Posts | Ignews</title>
+                    <title>Posts | MyNews</title>
                 </Head>
 
                 <h1 className={styles.errorMessage} >Could not load posts</h1>
@@ -105,7 +105,7 @@ export default  function News({news}:newsProps){
         )
 }
 
-export const getStaticProps: GetStaticProps = async ()=>{
+export const getServerSideProps: GetServerSideProps = async ()=>{
 
     let news = [] as INews[]
 
@@ -115,10 +115,8 @@ export const getStaticProps: GetStaticProps = async ()=>{
         
         news = res.data.news
         
-
         return {
-            props:{news},
-            revalidate: 60 * 60 * 30 // 30 minutes
+            props:{news}
         }
 
     }

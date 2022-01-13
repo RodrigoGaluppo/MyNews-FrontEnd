@@ -1,7 +1,7 @@
 import styles from "./home.styles.module.scss"
 
 import Head from "next/head"
-import {GetStaticProps} from "next/"
+import {GetStaticProps} from "next"
 
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
     <>
 
       <Head>
-        <title>Home| ig.news</title>
+        <title>Home| MyNews</title>
       </Head>
 
       <main className={styles['content-container']}>
@@ -36,6 +36,6 @@ export const getStaticProps:GetStaticProps = async ()=>{
     props: {
 
     },
-    revalidate: 60 * 60 * 24 * 3 // 3 days
+    revalidate: 60 * 60 * 24 * 3 // 3 dias
   }
 }
