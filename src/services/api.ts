@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL:"https://my-yahoo-newsscraper.herokuapp.com"
+    baseURL:"https://mynewsscrapper.cf"
 })
