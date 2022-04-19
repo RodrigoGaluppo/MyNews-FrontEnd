@@ -24,7 +24,7 @@ export default function Config({languages}) {
     <>
 
       <Head>
-        <title>Config | ignews</title>
+        <title>Config | MyNews</title>
       </Head>
 
       <main className={styles.main} >
