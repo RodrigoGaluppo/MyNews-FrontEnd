@@ -23,11 +23,11 @@ interface newsProps{
 }
 
 
-export default  function News({news}:newsProps){
+export default  function News(){
 
     const [query,SetQuery] =  useState("news")
     const formRef = useRef<FormHandles>(null)
-    const [articles,setArticles] = useState<INews[]>(news)
+    const [articles,setArticles] = useState<INews[]>()
     const {setLanguage, lang} = useLang()
 
     const HandleSearch = useCallback((data)=>{
@@ -35,6 +35,7 @@ export default  function News({news}:newsProps){
         SetQuery(Newquery)
     },[])
 
+    
 
     useEffect(()=>{
 
@@ -53,15 +54,15 @@ export default  function News({news}:newsProps){
 
         .catch((e)=>{
             alert(e)
-            setArticles(news)
+            setArticles([])
 
         })
     
     /* eslint-disable react-hooks/exhaustive-deps */
     },[query])
 
-
-    if(articles?.length > 0)
+        
+    
         return (
             <>
                 <Head>
@@ -74,10 +75,12 @@ export default  function News({news}:newsProps){
 
                         </SearchInput>
                     </Form>
+                    
                     <div className={styles.posts} >
 
                         {
-                            articles.map(post=>(
+                            articles?.length > 0 ?
+                            articles?.map(post=>(
                                 <Link key={post.link + `${Date.now()}`} href={`/news/${post.link}`}>
                                     <a >
                                         <time>{post.timeStamp}</time>
@@ -85,45 +88,25 @@ export default  function News({news}:newsProps){
                                         <p>{post.description}</p>
                                     </a>
                                 </Link>
-                            ))
+                            )) 
+                            
+                            :
+                            
+                            <h1 className={styles.loadingMessage} > Loading ... </h1>
                         }
 
                     </div>
                 </main>
             </>
         )
-    else
-        return(
-            <>
-                <Head>
-                    <title>Posts | MyNews</title>
-                </Head>
-
-                <h1 className={styles.errorMessage} >Could not load posts</h1>
-
-            </>
-        )
+   
+        
 }
 
 export const getServerSideProps: GetServerSideProps = async ()=>{
 
-    let news = [] as INews[]
-
-    try{
-        
-        const res = await api.post("/yahoonews",{},{})
-        
-        news = res.data.news
-        
-        return {
-            props:{news}
-        }
-
-    }
-    catch(e){
-        return {
-            props:{news}
-        }
+    return {
+        props:{}
     }
 
     

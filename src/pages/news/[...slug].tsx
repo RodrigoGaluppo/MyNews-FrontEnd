@@ -2,6 +2,7 @@ import styles from "./article.styles.module.scss"
 import Head from "next/head"
 import { GetStaticProps } from "next"
 import { api } from "../../services/api"
+import { useEffect, useState } from "react"
 
 
 interface INews{
@@ -16,18 +17,40 @@ interface INews{
 }
 
 interface newsProps{
-    article:INews
+    URL_POST:string
 }
 
 
-export default  function News({article}:newsProps){
-    if(!!article.title)
+export default  function News(props : newsProps){
+
+    const [article, setArticle] = useState<INews>()
+
+    useEffect(()=>{
+
+        const URL_POST = props.URL_POST
+
+        api.post("/article",{link:URL_POST},{})
+        .then((res)=>{
+            const newArticle = res.data.article
+            newArticle.link = URL_POST
+            setArticle(newArticle)
+            
+        })
+        .catch(()=>{
+
+            setArticle(null)
+        })
+
+    },[])
+    
         return (
             <>
                 <Head>
                     <title>News | Ignews</title>
                 </Head>
-
+                {
+                    !!article?.title ?
+                
                 <main className={styles.container}  >
                         <article className={styles.post} > 
                             <h1>{article.title}</h1>
@@ -39,20 +62,13 @@ export default  function News({article}:newsProps){
                             </p>
                             <strong>Source: <a href={article.source}> {article.source} </a></strong>
                         </article>
-                    </main>
+                </main>
+                :
+                <h1 className={styles.loadingMessage} >Loading...</h1>
+                }
             </>
         )
-    else
-        return(
-            <>
-                <Head>
-                    <title>Posts | MyNews</title>
-                </Head>
-
-                <h1 className={styles.errorMessage} >Could not load posts</h1>
-
-            </>
-        )
+    
 }
 
 export const getStaticPaths = async () =>{
@@ -66,28 +82,9 @@ export const getStaticProps: GetStaticProps = async (info)=>{
 
     const URL_POST = info.params.slug[0].split("URL=")[1]
 
-    let article = {} as INews
-
-    try{
-        
-        const res = await api.post("/article",{link:URL_POST},{})
-        
-        article = res.data.article
-
-        article.link = URL_POST
-
-        return {
-            props:{article},
-            revalidate: 60 * 60  // 1 minute
-        }
-
-    }
-    catch(e){
-        console.log(e);
-        
-        return {
-            props:{article}
-        }
+    return {
+        props:{URL_POST},
+        revalidate: 60 * 60 * 60 * 12 // 12 hours 
     }
 
     

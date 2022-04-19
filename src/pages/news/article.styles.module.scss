@@ -81,12 +81,13 @@
     
 }
 
-.errorMessage{
+.loadingMessage{
     text-align: center;
     display:flex ;
     width: 100%;
     padding-top: 5rem;
     align-items: center;
     justify-content: center;
-    color:#aa2f2f;
+    //color:#aa2f2f;
+    color: var(--purple-500);
 }
