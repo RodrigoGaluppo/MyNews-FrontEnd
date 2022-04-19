@@ -66,7 +66,7 @@ export default  function News(){
         return (
             <>
                 <Head>
-                    <title>News | Ignews</title>
+                    <title>News | MyNews</title>
                 </Head>
 
                 <main className={styles.container} > 
