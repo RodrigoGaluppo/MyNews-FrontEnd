@@ -14,34 +14,32 @@ export default function Config({languages}) {
   const {setLanguage, lang} = useLang()
 
   function handleSelect(){
-
     setLanguage(ref.current.value)
-    
   }
+
   if(languages?.length > 0){
-  return (
     
-    <>
+    return (
+      <>
+        <Head>
+          <title>Config | MyNews</title>
+        </Head>
 
-      <Head>
-        <title>Config | MyNews</title>
-      </Head>
-
-      <main className={styles.main} >
-         
-         <section>
-          <h2>Searching Language</h2>
-          <select defaultValue={lang} onChange={()=>{handleSelect()}} ref={ref} >
-            {languages.map(language=>(
-              <option key={language} value={language}>{language}</option>
-            ))}
-          </select>
-         </section>
+        <main className={styles.main} >
           
-      </main>
-      
-    </>
-  )
+          <section>
+            <h2>Searching Language</h2>
+            <select defaultValue={lang} onChange={()=>{handleSelect()}} ref={ref} >
+              {languages.map(language=>(
+                <option key={language} value={language}>{language}</option>
+              ))}
+            </select>
+          </section>
+            
+        </main>
+        
+      </>
+    )
   }
   else
   {
