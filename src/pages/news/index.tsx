@@ -18,9 +18,7 @@ interface INews{
     imgSrc:string
 }
 
-interface newsProps{
-    news:INews[]
-}
+
 
 
 export default  function News(){
@@ -61,8 +59,6 @@ export default  function News(){
     /* eslint-disable react-hooks/exhaustive-deps */
     },[query])
 
-        
-    
         return (
             <>
                 <Head>
