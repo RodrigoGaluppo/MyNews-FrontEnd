@@ -45,9 +45,7 @@ export default  function News(props : newsProps){
     
         return (
             <>
-                <Head>
-                    <title>News | MyNews</title>
-                </Head>
+                
                 {
                     !!article?.title ?
                 

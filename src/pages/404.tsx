@@ -9,9 +9,7 @@ export default function Page404() {
   return (
     <>
 
-      <Head>
-        <title>Not found | MyNews</title>
-      </Head>
+  
 
       <main className={styles.main} >
           <h1>Could not find the page you are looking for</h1>

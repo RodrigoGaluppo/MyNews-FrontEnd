@@ -6,11 +6,47 @@ export default class MyDocument extends Document{
         return(
             <Html>
             <Head>
-               
-                <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-                <link rel="preconnect" href="https://fonts.gstatic.com" ></link>
-                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"></link>
-                <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+            <base href="%PUBLIC_URL%/" />
+            <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="mobile-web-app-capable" content="yes" />
+            <meta name="theme-color" content="#323232" />
+            
+            <meta name="author" content="RussoCode - Rodrigo Russo" />
+            <meta name="description" content="A Modern news indexer" />
+            <meta name="keywords" content="news, noticias, noticias agora, news indexer, indexador de noticias" />
+            <meta name="robots" content="index,follow" />
+            
+            <meta property="og:title" content="myNews - news indexer" />
+            <meta property="og:site_name" content="MyNews" />
+            <meta property="og:description" content="A Modern news indexer" />
+            <meta property="og:url" content="%PUBLIC_URL%" />
+            <meta property="og:image" content="%PUBLIC_URL%/Images/Icon192.png" />
+            <meta property="og:image:type" content="image/png" />
+
+            <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <meta name="apple-mobile-web-app-title" content="Chat Me" /> 
+
+
+            <link rel="apple-touch-icon" sizes="76x76" href="%PUBLIC_URL%/Images/Icon72.png" />
+
+       
+            <link rel="apple-touch-icon" sizes="167x167" href="%PUBLIC_URL%/Images/Icon192.png" />
+
+        
+            <link rel="icon" sizes="192x192" href="%PUBLIC_URL%/Images/Icon192.png" />
+
+            <link rel="icon" sizes="144x144" href="%PUBLIC_URL%/Images/Icon144.png" />
+
+            <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+
+            <title >MyNews</title >
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+
             </Head>
             <body>
                <Main></Main>

@@ -8,10 +8,6 @@ export default function Home() {
   return (
     <>
 
-      <Head>
-        <title>Home| MyNews</title>
-      </Head>
-
       <main className={styles['content-container']}>
         <section className={styles.hero} >
           <span>👏 Hey, welcome</span>

@@ -61,9 +61,7 @@ export default  function News(){
 
         return (
             <>
-                <Head>
-                    <title>News | MyNews</title>
-                </Head>
+                
 
                 <main className={styles.container} > 
                     <Form ref={formRef} onSubmit={HandleSearch} >
