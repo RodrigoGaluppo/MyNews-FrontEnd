@@ -22,6 +22,7 @@ export function Header(){
             <div className={styles.headerContent} >
 
                 <Link href="/" >
+                    
                     <img src="/Images/logo.svg" alt="ig.news" />
                 </Link> 
 
