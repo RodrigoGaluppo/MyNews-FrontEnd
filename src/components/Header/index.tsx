@@ -48,7 +48,7 @@ export function Header(){
 
                 <div>
                     <Link href="/" >
-                        <img src="/images/logo.svg" alt="ig.news" />
+                        <img src="/Images/logo.svg" alt="ig.news" />
                     </Link> 
                 </div>
 

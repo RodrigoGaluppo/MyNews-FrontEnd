@@ -6,7 +6,7 @@ module.exports = withPWA({
     dest:"public",
     disable: process.env.NODE_ENV === "development",
     fallbacks: {
-      document: '/src/pages/404.tsx',
+      document: "/pages/404.tsx"
     }
   },
 
