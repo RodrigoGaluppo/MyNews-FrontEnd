@@ -8,9 +8,7 @@ import styles from "./404.styles.module.scss";
 export default function Page404() {
   return (
     <>
-
-  
-
+    
       <main className={styles.main} >
           <h1>Could not find the page you are looking for</h1>
           <Link href="/" >

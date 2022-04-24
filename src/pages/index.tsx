@@ -15,7 +15,7 @@ export default function Home() {
           <p>Start using it<span> now</span></p>
 
         </section>
-        <img src="/images/avatar.svg" alt="girl coding" />
+        <img src="/Images/avatar.svg" alt="girl coding" />
 
 
       </main>
