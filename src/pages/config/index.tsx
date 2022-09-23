@@ -69,7 +69,6 @@ export const getStaticProps:GetStaticProps = async ()=>{
   let languages:string[] = []
 
   try{
-           
       const res = await api.get("/languages",{})
       
       languages = res.data.languages
